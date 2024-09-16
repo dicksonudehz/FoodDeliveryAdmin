@@ -2,9 +2,9 @@ import { useState } from "react";
 import "./add.css";
 import { assets } from "../../assets/assets";
 import axios from "axios";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
-const Add = ({url}) => {
+const Add = ({ url }) => {
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
     name: "",
@@ -13,8 +13,8 @@ const Add = ({url}) => {
     category: "salad",
   });
 
-  if (!data){
-    toast.error("field items are empty")
+  if (!data) {
+    toast.error("field items are empty");
   }
 
   const handleData = (event) => {
@@ -32,11 +32,9 @@ const Add = ({url}) => {
     formData.append("category", data.category);
     formData.append("image", image);
 
-    const res = await axios.post(
-      `${url}/api/food/add`,
-      formData
-    );
+    const res = await axios.post(`${url}/api/food/add`, formData);
     console.log(res);
+
     if (res.data.success) {
       setData({
         name: "",
@@ -45,9 +43,10 @@ const Add = ({url}) => {
         category: "salad",
       });
       setImage(false);
-      toast.success(res.data.message)
-    }else{
-      toast.error(res.data.message)
+      // setImage(res.data.image)
+      toast.success(res.data.message);
+    } else {
+      toast.error(res.data.message);
     }
   };
 
