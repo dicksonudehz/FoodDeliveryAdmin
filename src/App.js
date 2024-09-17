@@ -8,7 +8,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const url = " http://localhost:7500";
+  // const url = " http://localhost:7500";
+  const url = "https://food-delivery-backend-peach.vercel.app";
   return (
     <div>
       <ToastContainer />
