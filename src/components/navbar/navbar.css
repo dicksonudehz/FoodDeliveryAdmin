@@ -11,3 +11,9 @@
 .profile-image {
   width: 40px;
 }
+.profile {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+}
